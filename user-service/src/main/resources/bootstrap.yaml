@@ -1,0 +1,31 @@
+eureka:
+  client:
+    enabled: false  #关闭eureka自动注册
+
+spring:
+  cloud:
+   zookeeper:
+    enabled: false #关闭zk自动注册
+  profiles:
+    active:
+
+--- #profiles
+spring:
+  profiles: eureka
+eureka:
+  server: http://localhost:7000/eureka
+  client:
+    enabled: true
+    serviceUrl:
+      defaultZone: ${eureka.server}
+    register-with-eureka: true
+    fetch-registry: true
+--- #
+spring:
+  profiles: zk
+  cloud:
+    zookeeper:
+      enabled: true
+      connect-string: 192.168.21.134:2181
+      discovery:
+        root: /registry-center/services

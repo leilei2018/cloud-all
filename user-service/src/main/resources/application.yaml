@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: user-service
+  cloud:
+    sentinel:
+      enabled: false
+
+      log:
+        switchPid: true
+      transport:
+        dashboard: localhost:8888
+      datasource:
+        ds1:
+          nacos:
+            serverAddr: localhost:8848
+            groupId: ${spring.application.name}
+            dataId:  flow
+            rule-type: flow
+server:
+  port: 8001
+
+
+
