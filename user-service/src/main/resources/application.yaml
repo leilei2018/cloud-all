@@ -17,7 +17,5 @@ spring:
             dataId:  flow
             rule-type: flow
 server:
-  port: 8001
-
-
+  port: 8000
 

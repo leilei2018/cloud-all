@@ -7,7 +7,7 @@ spring:
    zookeeper:
     enabled: false #关闭zk自动注册
   profiles:
-    active:
+    active: eureka
 
 --- #profiles
 spring:

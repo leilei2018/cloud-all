@@ -10,8 +10,8 @@ import org.springframework.context.annotation.Configuration;
 
 import javax.annotation.PostConstruct;
 
-@Configuration
-@AutoConfigureAfter(SentinelAutoConfiguration.class)
+/*@Configuration
+@AutoConfigureAfter(SentinelAutoConfiguration.class)*/
 public class SentinelClientConfiguration {
     @PostConstruct
     public void init(){

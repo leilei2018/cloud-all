@@ -57,9 +57,9 @@ public class UserAdminApplication {
                     @HystrixProperty(name="execution.isolation.thread.timeoutInMilliseconds",value = "20000")
             }
     )*/
-    @GetMapping("/hello/{n}")
-    @SentinelResource("haha")
-    public String hello(@PathVariable  int n){
+    @GetMapping("/hello")
+    //@SentinelResource("haha")
+    public String hello(){
 
         String hello = helloService.hello();
 

@@ -6,6 +6,7 @@ spring:
 
   cloud:
     sentinel:
+      enabled: false
       transport:
         dashboard: localhost:8888
       datasource:
