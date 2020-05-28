@@ -1,10 +1,8 @@
 package com.fd.useradmin.hystrix;
 
-import com.netflix.hystrix.contrib.javanica.command.AbstractHystrixCommand;
-import com.netflix.hystrix.contrib.javanica.command.GenericSetterBuilder;
-import com.netflix.hystrix.contrib.javanica.command.HystrixCommandBuilder;
 
-public class DemoAbstractCommand extends AbstractHystrixCommand<String> {
+
+public class DemoAbstractCommand {}/*extends AbstractHystrixCommand<String> {
     protected DemoAbstractCommand(HystrixCommandBuilder builder) {
         super(builder);
     }
@@ -24,4 +22,4 @@ public class DemoAbstractCommand extends AbstractHystrixCommand<String> {
                 .build();
         new DemoAbstractCommand(build).execute();
     }
-}
+}*/
