@@ -1,9 +1,7 @@
 package com.fd.useradmin.hystrix;
 
-import com.netflix.hystrix.contrib.javanica.command.*;
-import com.netflix.hystrix.contrib.javanica.exception.CommandActionExecutionException;
 
-public class MyGenericCommand extends GenericCommand {
+public class MyGenericCommand {}/*extends GenericCommand {
     public MyGenericCommand(HystrixCommandBuilder builder) {
         super(builder);
     }
@@ -75,3 +73,4 @@ public class MyGenericCommand extends GenericCommand {
 
     }
 }
+*/

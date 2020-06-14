@@ -4,7 +4,6 @@ import com.netflix.hystrix.HystrixCommand;
 import com.netflix.hystrix.HystrixCommandGroupKey;
 import com.netflix.hystrix.HystrixCommandProperties;
 import com.netflix.hystrix.HystrixThreadPoolProperties;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import com.netflix.hystrix.exception.HystrixBadRequestException;
 import com.netflix.hystrix.exception.HystrixTimeoutException;
 
@@ -54,13 +53,13 @@ public class hystrixDemo extends HystrixCommand<String> {
     }
 
 
-    @com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand(
+   /* @com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand(
             groupKey = "",
             threadPoolProperties={
                     @HystrixProperty(name="",value = "")
             }
 
-    )
+    )*/
     public static void main(String[] args) throws IOException {
         //Setter setter = Setter.withGroupKey(new HystrixCommandGroupDefault("g1"));
 

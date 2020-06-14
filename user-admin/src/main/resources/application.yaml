@@ -6,6 +6,7 @@ spring:
 
   cloud:
     sentinel:
+      enabled: false
       transport:
         dashboard: localhost:8888
       datasource:
@@ -20,6 +21,10 @@ spring:
         enabled: false  #关闭RibbonLoadbalanceClient,启动spring-loadbalancer
       retry: false  #关闭重试，默认true=>开启
 
+
+    circuit:
+      breaker:
+        enabled: false
 server:
   port: 9000
 
@@ -38,5 +43,9 @@ ribbon:
 
 feign:
   hystrix:
-    enabled: false #启动熔断feign
+    enabled: false #启动hystrix熔断  利用rtjava，响应式，并且利用线程池去执行
+  sentinel:
+    enabled: true  #启动sentinel熔断 SentinelInvocationHandler，同一个线程调用
+
+    #SentinelContractHolder.parseAndValidateMetadata错误 https://blog.csdn.net/pointer_v/article/details/104989935
 

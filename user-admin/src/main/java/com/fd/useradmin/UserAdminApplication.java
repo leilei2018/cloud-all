@@ -6,8 +6,6 @@ import com.alibaba.csp.sentinel.slots.block.flow.FlowRule;
 import com.alibaba.csp.sentinel.slots.block.flow.FlowRuleManager;
 import com.fd.useradmin.feignservice.IHelloService;
 import com.netflix.discovery.converters.Auto;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.SpringApplication;
@@ -34,7 +32,7 @@ import java.util.List;
 @SpringBootApplication
 @RestController
 @EnableFeignClients
-@EnableCircuitBreaker
+//@EnableCircuitBreaker
 public class UserAdminApplication {
 
     @Autowired
@@ -57,9 +55,9 @@ public class UserAdminApplication {
                     @HystrixProperty(name="execution.isolation.thread.timeoutInMilliseconds",value = "20000")
             }
     )*/
-    @GetMapping("/hello/{n}")
-    @SentinelResource("haha")
-    public String hello(@PathVariable  int n){
+    @GetMapping("/hello")
+    //@SentinelResource("haha")
+    public String hello(){
 
         String hello = helloService.hello();
 
