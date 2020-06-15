@@ -31,7 +31,7 @@ public class EurekaServerBootstrapApplication {
 
     @PostMapping("/qq/{id}")
     public String weq( @RequestBody(required = false) LogVo lg){
-        System.out.println("delop");
+        System.out.println("master");
         return "qwe";
     }
 
