@@ -20,4 +20,7 @@ public class ScheduleConfig implements SchedulingConfigurer {
         public Executor taskExecutor() {
             return Executors.newScheduledThreadPool(1); //指定线程池大小
         }
+
+
+
 }

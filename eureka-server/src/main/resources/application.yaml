@@ -9,7 +9,7 @@ eureka:
   server:
     enable-self-preservation: false
   client:
-    register-with-eureka: false
+    register-with-eureka: true
     fetch-registry: false
     serviceUrl:
       defaultZone: http://localhost:${server.port}/eureka

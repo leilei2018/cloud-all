@@ -38,6 +38,7 @@ public class WebConfig implements WebMvcConfigurer {
         // 参考它的做法, fastjson也只添加application/json的MediaType
         List<MediaType> fastMediaTypes = new ArrayList<>();
         fastMediaTypes.add(MediaType.APPLICATION_JSON_UTF8);
+        fastMediaTypes.add(MediaType.ALL);
         fastJsonHttpMessageConverter.setSupportedMediaTypes(fastMediaTypes);
         return fastJsonHttpMessageConverter;
     }

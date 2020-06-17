@@ -9,11 +9,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
+import org.springframework.http.MediaType;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.util.MimeType;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import java.lang.reflect.Type;
@@ -40,15 +43,17 @@ public class EurekaServerBootstrapApplication {
         return "qwe";
     }
 
-    @GetMapping("/q2")
+    @GetMapping(value = "/q2/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBodyMessage("q2保存成功")
-    public String q2(){ //bad request
+    public String q2(@PathVariable Long id, HttpServletRequest request){ //bad request
+        log.info("请求头信息："+request.getContentType());
         //validateService.vad2(new LogVo());
         return "q2";
     }
 
     @GetMapping("/q3")
-    public String weq32( @Validated  LogVo log){
+    public String weq32(@Validated @RequestBody LogVo logVo){
+        log.info(logVo.toString());
         return "q3";
     }
 
