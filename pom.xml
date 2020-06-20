@@ -8,6 +8,7 @@
         <module>user-admin</module>
         <module>service-gateway</module>
         <module>service-sentinel</module>
+        <module>service-common</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -29,6 +30,13 @@
         <spring-cloud.version>Hoxton.SR3</spring-cloud.version>
     </properties>
 
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
 
 
     <!--<dependencies>
