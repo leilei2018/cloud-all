@@ -1,6 +1,7 @@
 package com.fd.eurekaserver.handler;
 
 
+import com.fd.eurekaserver.model.base.JsonVo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -21,11 +22,9 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(Exception.class)
     @ResponseBody
-    public Map handleHaolefuException(Exception e) {
-        Map map = new HashMap();
+    public JsonVo handleHaolefuException(Exception e) {
         log.error("系统异常：", e);
-        map.put("error",e.getMessage());
-        return map;
+        return JsonVo.fail(e.getMessage());
     }
 
 }

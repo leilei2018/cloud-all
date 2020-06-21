@@ -37,10 +37,11 @@ public class EurekaServerBootstrapApplication {
     @Autowired
     ValidateService validateService;
 
-    @GetMapping("/q1")
+    @RequestMapping("/q1")
+    //springboot-validate验证框架并不会验证 基本数据属性 @Valid @notNull,需要加切面自己调用validateUtil去校验
     public String q1(@Valid @NotNull(message = "uuid不能为空") String uuid){
         //validateService.vad1(null);
-        return "qwe";
+        return uuid;
     }
 
     @GetMapping(value = "/q2/{id}",produces = MediaType.APPLICATION_JSON_VALUE)

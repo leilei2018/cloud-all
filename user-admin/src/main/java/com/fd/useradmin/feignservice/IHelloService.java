@@ -2,6 +2,7 @@ package com.fd.useradmin.feignservice;
 
 import com.alibaba.fastjson.JSONObject;
 import com.fd.useradmin.model.vo.GreetVo;
+import com.fd.useradmin.model.vo.JsonVo;
 import com.fd.useradmin.model.vo.LogVo;
 import feign.hystrix.FallbackFactory;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -11,19 +12,32 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
-@FeignClient(value = "EUREKA-SERVER",fallbackFactory = IHelloService.HelloServiceFallbackFactory.class)
+@FeignClient(value = "eureka-server",fallbackFactory = IHelloService.HelloServiceFallbackFactory.class)
 public interface IHelloService {
-    @GetMapping("/greet")
-    public String hello();
 
-    @GetMapping("/greet")
-    public JSONObject hello3();
+    /**
+     * @param uuid
+     * @return
+     */
+    @RequestMapping(value = "/q1",method = RequestMethod.GET)
+    public String helloV1_1(@RequestParam("uuid") String uuid);
 
-    @GetMapping("/greet")
-    public GreetVo hello2();
+    @RequestMapping(value = "/q1",method = RequestMethod.GET)
+    public String helloV1_2(@RequestParam String uuid);
 
-    @RequestMapping("/q3")
-    public String weq32( @Validated LogVo logVo);
+    @RequestMapping(value = "/q1",method = RequestMethod.GET)
+    public String helloV1_3(String uuid);
+
+
+    @GetMapping(value = "/q1")
+    public String helloV2_1(@RequestParam("uuid") String uuid);
+
+    @GetMapping(value = "/q1")
+    public String helloV2_2(@RequestParam String uuid);
+
+    @GetMapping(value = "/q1")
+    public String helloV2_3(String uuid);
+
 
 
     /**
@@ -43,27 +57,7 @@ public interface IHelloService {
         public IHelloService create(Throwable cause) {
            //cause => FeignException  默认返回状态不等于200，404，就会抛出异常
            cause.printStackTrace();
-           return new IHelloService() {
-               @Override
-               public String hello() {
-                   return null;
-               }
-
-               @Override
-               public GreetVo hello2() {
-                   return null;
-               }
-
-               @Override
-               public JSONObject hello3() {
-                   return null;
-               }
-
-               @Override
-               public String weq32(LogVo logVo) {
-                   return null;
-               }
-           };
+           return null;
         }
     }
 
