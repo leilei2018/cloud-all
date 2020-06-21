@@ -1,0 +1,25 @@
+
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.21.134:3306/0325mall?serverTimezone=UTC&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
+    username: root
+    password: 123456
+    hikari:
+      connection-test-query: SELECT 1 FROM DUAL
+      idle-timeout: 60000
+      connection-timeout: 60000
+      validation-timeout: 30000
+      max-lifetime: 60000
+      maximum-pool-size: 10
+  application:
+    name: swagger-service
+mybatis:
+  type-aliases-package: com.fd.swagger.model.entity,com.fd.swagger.model.vo
+  mapper-locations: mapper/**/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+server:
+  port: 8080
