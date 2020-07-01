@@ -8,6 +8,11 @@
         <module>user-admin</module>
         <module>service-gateway</module>
         <module>service-sentinel</module>
+        <module>cloud-common</module>
+        <module>service-pay-module</module>
+        <module>service-pay-module/pay-service-api</module>
+        <module>service-pay-module/pay-service</module>
+        <module>swagger-service</module>
         <module>service-common</module>
     </modules>
     <parent>
@@ -30,13 +35,6 @@
         <spring-cloud.version>Hoxton.SR3</spring-cloud.version>
     </properties>
 
-
-    <dependencies>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
-    </dependencies>
 
 
     <!--<dependencies>
@@ -106,7 +104,12 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
     <build>
         <plugins>
             <plugin>
