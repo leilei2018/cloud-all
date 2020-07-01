@@ -4,3 +4,11 @@ spring:
   cloud:
     config:
       override-none: true
+
+
+2:java-api官网地址
+https://www.apiref.com/java11-zh/java.base/java/security/KeyStore.html
+
+
+3:springboot文档
+https://www.apiref.com/java11-zh/java.base/java/security/KeyStore.html
