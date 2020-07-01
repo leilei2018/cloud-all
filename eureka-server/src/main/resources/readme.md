@@ -1,0 +1,6 @@
+1：利用nacos作为配置中心，有时候local环境，有些配置需要已本地配置，作为优先。
+例如一些上传下载路径，需要配置成window路径，解决办法，在nacos配置属性中添加如下即可：
+spring:
+  cloud:
+    config:
+      override-none: true
