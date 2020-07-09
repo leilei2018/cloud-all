@@ -22,16 +22,6 @@ import java.util.Set;
 @CacheConfig(cacheNames = "books")
 public class ValidateServiceImpl implements ValidateService {
 
-    @Override
-    @Cacheable( key="#uuid.name") //spel expression
-    /**
-     * 如果是基本类型，则直接#key   --> String aa  #aa
-     * 如果是对象，则#key.pros         Log vo     #vo.name
-     */
-    public boolean vad1( LogVo uuid) {
-        System.out.println("查询key:"+uuid.getName());
-        return false;
-    }
 
     @Override
     public boolean vad2(LogVo logVo) {
@@ -48,8 +38,27 @@ public class ValidateServiceImpl implements ValidateService {
         return false;
     }
 
-    public static void main(String[] args) {
-        ValidateServiceImpl tt = new ValidateServiceImpl();
+
+
+
+    @Override
+    @Cacheable( key="#uuid.name") //spel expression
+    /**
+     * 如果是基本类型，则直接#key   --> String aa  #aa
+     * 如果是对象，则#key.pros         Log vo     #vo.name
+     */
+    public LogVo find( LogVo uuid) {
+        System.out.println("查询key:"+uuid.getName());
+        LogVo tt = new LogVo();
+        tt.setName("heapn");
+        tt.setDate("2020-06-02");
+        tt.setAge("33");
+        return tt;
     }
 
+    @Override
+    @CacheEvict(allEntries = true,beforeInvocation = true)
+    public void deleteAllcache() {
+
+    }
 }

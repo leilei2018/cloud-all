@@ -13,7 +13,6 @@ import java.util.Map;
 
 @Data
 public class LogVo {
-    @NotNull(message = "uuid不能为空")
     private String date;
     private String age;
     private String name;

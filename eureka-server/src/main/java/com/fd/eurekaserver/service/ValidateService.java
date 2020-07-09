@@ -17,9 +17,13 @@ import javax.validation.constraints.NotNull;
  */
 public interface ValidateService {
 
-    public boolean vad1( LogVo uuid);
+
     public boolean vad4(@Valid @NotNull(message = "uuid不能为空d4") String uuid);
     public boolean vad2(@Valid LogVo logVo);
     public boolean vad3(@Validated LogVo logVo);
+
+
+    public LogVo find( LogVo uuid);
+    public void deleteAllcache();
 
 }

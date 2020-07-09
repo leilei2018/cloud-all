@@ -21,3 +21,6 @@ POST:http://user-service/api/iousUntion/passwordCheck
 
 5:redis分析key内存大小<br>
 https://blog.csdn.net/qmhball/article/details/86063466?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase
+
+6:spring-cache-redis利用kryo为序列化器，并apache性能qps测试
+https://blog.csdn.net/boling_cavalry/article/details/80719683

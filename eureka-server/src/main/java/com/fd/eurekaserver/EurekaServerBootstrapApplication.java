@@ -41,7 +41,7 @@ import java.util.Map;
 import java.util.Random;
 import java.util.stream.Collectors;
 
-@SpringBootApplication(exclude = {RedisAutoConfiguration.class, RedissonAutoConfiguration.class})
+@SpringBootApplication
 //@EnableEurekaServer
 @SimpleRestController
 @EnableScheduling
@@ -103,18 +103,20 @@ public class EurekaServerBootstrapApplication  {
                 .run(args);
 
         ValidateService validateService = ctx.getBean(ValidateService.class);
+        validateService.deleteAllcache();
+
         LogVo log = new LogVo();
         log.setName("we");
-        validateService.vad1(log);
-        validateService.vad1(log);
-
+        validateService.find(log);
+        LogVo logVo = validateService.find(log);
+        System.out.println(logVo);
 
         LogVo log2 = new LogVo();
         log2.setName("qwer");
-        validateService.vad1(log);
-        validateService.vad1(log);
-        validateService.vad1(log2);
-        validateService.vad1(log2);
+        validateService.find(log);
+        LogVo logVo2 = validateService.find(log);
+        System.out.println(logVo2);
+
 
         //SpringApplication.run(EurekaServerBootstrapApplication.class,args);
         //log.info("---------------用户编号[{}]的提现流水号[{}]的交易流水结果:[{}]",new Object[]{"aa","bb","cc"});

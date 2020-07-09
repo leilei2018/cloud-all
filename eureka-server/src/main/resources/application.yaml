@@ -2,7 +2,7 @@ spring:
   application:
     name: eureka-server
   cache:
-    type: simple
+    type: redis
   cloud:
     nacos:
       discovery:
