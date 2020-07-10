@@ -24,3 +24,6 @@ https://blog.csdn.net/qmhball/article/details/86063466?utm_medium=distribute.pc_
 
 6:spring-cache-redis利用kryo为序列化器，并apache性能qps测试
 https://blog.csdn.net/boling_cavalry/article/details/80719683
+
+7:gateway
+https://www.cnblogs.com/babycomeon/p/11161073.html

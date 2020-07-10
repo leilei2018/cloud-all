@@ -102,20 +102,6 @@ public class EurekaServerBootstrapApplication  {
                 .web(WebApplicationType.NONE)
                 .run(args);
 
-        ValidateService validateService = ctx.getBean(ValidateService.class);
-        validateService.deleteAllcache();
-
-        LogVo log = new LogVo();
-        log.setName("we");
-        validateService.find(log);
-        LogVo logVo = validateService.find(log);
-        System.out.println(logVo);
-
-        LogVo log2 = new LogVo();
-        log2.setName("qwer");
-        validateService.find(log);
-        LogVo logVo2 = validateService.find(log);
-        System.out.println(logVo2);
 
 
         //SpringApplication.run(EurekaServerBootstrapApplication.class,args);
