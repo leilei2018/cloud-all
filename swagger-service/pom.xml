@@ -14,7 +14,7 @@
         <mybatis.version>2.0.1</mybatis.version>
         <mybatis-plus.version>2.3</mybatis-plus.version>
         <pagehelper.version>1.2.3</pagehelper.version>
-        <mysql.jdbc.version>8.0.18</mysql.jdbc.version>
+        <mysql.jdbc.version>8.0.28</mysql.jdbc.version>
     </properties>
 
     <dependencies>
